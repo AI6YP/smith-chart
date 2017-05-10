@@ -1,0 +1,28 @@
+{
+  "name": "smith-chart",
+  "version": "0.1.0",
+  "description": "Smith Chart React component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "browserify src/main.js > build/bundle.js",
+    "server": "watch 'npm run bundle' lib/*.js & http-server -c5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drom/smith-chart.git"
+  },
+  "author": "Aliaksei Chapyzhenka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drom/smith-chart/issues"
+  },
+  "homepage": "https://github.com/drom/smith-chart#readme",
+  "devDependencies": {
+    "browserify": "^14.3.0",
+    "eslint": "^3.19.0",
+    "mocha": "^3.3.0",
+    "react": "^16.0.0-alpha.12",
+    "react-dom": "^16.0.0-alpha.12"
+  }
+}
