@@ -6,6 +6,10 @@ Stateless React component to render [Smith Chart](http://www.arrl.org/files/file
 
 ## Usage
 
+```
+npm i smith-chart
+```
+
 ```js
 const genSmithChart = require('smith-chart'),
       React = require('react'),
