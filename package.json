@@ -4,8 +4,8 @@
   "description": "Smith Chart React component",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "browserify src/main.js > build/bundle.js",
+    "test": "eslint index.js",
+    "build": "browserify src/app.js > build/app.js",
     "server": "watch 'npm run bundle' lib/*.js & http-server -c5"
   },
   "repository": {
@@ -21,6 +21,7 @@
   "devDependencies": {
     "browserify": "^14.3.0",
     "eslint": "^3.19.0",
+    "http-server": "^0.10.0",
     "mocha": "^3.3.0",
     "react": "^16.0.0-alpha.12",
     "react-dom": "^16.0.0-alpha.12"

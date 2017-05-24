@@ -1,6 +1,6 @@
 'use strict';
 
-const genSmithChart = require('../lib/smith-chart'),
+const genSmithChart = require('../'),
       React = require('react'),
       ReactDOM = require('react-dom');
 
