@@ -66,7 +66,6 @@ function genSmithChart ($) {
     const y = props.y;
     const x = props.x;
     const r = props.r;
-    // console.log(y, r);
 
     const r0 = Math.abs(y);
     const r1 = props.r;
@@ -85,7 +84,7 @@ function genSmithChart ($) {
       props.lines
       .map(desc => [r / desc[0], 1 / (1 + desc[1])])
       .map(desc => [
-      	$(ImLine, {y:  desc[0], x: desc[1], r: r}),
+        $(ImLine, {y:  desc[0], x: desc[1], r: r}),
         $(ImLine, {y: -desc[0], x: desc[1], r: r})
       ]),
       $('line', {
@@ -96,35 +95,66 @@ function genSmithChart ($) {
     );
   }
 
-  return function SmithChart(props) {
+  /*
+    data: Array
+    x: function
+    y: function
+    r: Number
+    className
+  */
+  function Shape (props) {
     const r = props.r;
-    return $('div', {},
-      $('div', {}, 'Smith Chart'),
-      $('div', {},
-        $('svg', {
-          xmlns: 'http://www.w3.org/2000/svg',
-          xmlnsXlink: 'http://www.w3.org/1999/xlink',
-        	viewBox: [0, 0, 2 * r + 3, 2 * r + 3],
-          height: r + 3,
-          width: r + 3
-        },
-          $('defs', {},
-            $('style', {},
-            `
-.l1 { stroke: black; fill: none; stroke-linecap: round; stroke-width: 3 }
-.l2 { stroke: black; fill: none; stroke-linecap: round; }
-`)
-            /* butt; square; */
-            /* stroke-opacity: 0.1; */
-          ),
-          $('g', {transform: t(2 * r + 1, r + 1)},
-            $(Re, { r: r, lines: grid }),
-            $(Im, { r: r, lines: grid }),
-            $(ReLabels, { r: r, lines: reLabels0 })
+    const data = props.data;
+    const x = props.x;
+    const y = props.y;
+    const className = props.className;
+    return $('g', { className: className },
+      $('path', { d: 'M' + data.map(e => {
+        const [x0, y0] = pos(r / (1 + x(e)), r / y(e));
+        return [x0, y0].join(',')
+      }).join(' ') })
+    );
+  }
+
+  return {
+    Shape: Shape,
+    Grid: {
+      Re: Re,
+      Im: Im
+    },
+    ReLabels: ReLabels,
+    grid: grid,
+    reLabels0: reLabels0,
+    SmithChart: function (props) {
+      const r = props.r;
+      return $('div', {},
+        $('div', {}, 'Smith Chart'),
+        $('div', {},
+          $('svg', {
+            xmlns: 'http://www.w3.org/2000/svg',
+            xmlnsXlink: 'http://www.w3.org/1999/xlink',
+            viewBox: [0, 0, 2 * r + 3, 2 * r + 3],
+            height: r + 3,
+            width: r + 3
+          },
+            $('defs', {},
+              $('style', {},
+              `
+  .l1 { stroke: black; fill: none; stroke-linecap: round; stroke-width: 3 }
+  .l2 { stroke: black; fill: none; stroke-linecap: round; }
+  `)
+              /* butt; square; */
+              /* stroke-opacity: 0.1; */
+            ),
+            $('g', {transform: t(2 * r + 1, r + 1)},
+              $(Re, { r: r, lines: grid }),
+              $(Im, { r: r, lines: grid }),
+              $(ReLabels, { r: r, lines: reLabels0 })
+            )
           )
         )
-      )
-    );
+      );
+    }
   };
 }
 
