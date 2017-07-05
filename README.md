@@ -6,17 +6,4 @@ Stateless React component to render [Smith Chart](http://www.arrl.org/files/file
 
 ## Usage
 
-```
-npm i smith-chart
-```
-
-```js
-const genSmithChart = require('smith-chart'),
-      React = require('react'),
-      ReactDOM = require('react-dom');
-
-ReactDOM.render(
-  genSmithChart(React.createElement)({ r: 512 }),
-  document.getElementById('root')
-);
-```
+[WebPack example](https://www.webpackbin.com/bins/-KoE2n0POyTgXOHvvGtf)
