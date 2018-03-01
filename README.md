@@ -15,3 +15,5 @@ npm i
 npm run build
 npm start
 ```
+
+[RequireBin](http://requirebin.com/?code=7cc134bf0e2299c75a97)
