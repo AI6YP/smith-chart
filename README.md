@@ -4,6 +4,14 @@ Stateless React component to render [Smith Chart](http://www.arrl.org/files/file
 
 ![result](https://rawgit.com/drom/smith-chart/master/res.svg)
 
-## Usage
+## Example
 
-[WebPack example](https://www.webpackbin.com/bins/-KoE2n0POyTgXOHvvGtf)
+Example of React [app](src/app.js)
+
+### Build / Run example
+
+```sh
+npm i
+npm run build
+npm start
+```
