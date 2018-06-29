@@ -8,7 +8,7 @@ const genSmithChart = require('../')
 
 const $ = React.createElement;
 
-const SC = genSmithChart($);
+const SC = genSmithChart.chart($);
 
 // grid -> Grid
 // axis -> Axis

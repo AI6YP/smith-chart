@@ -159,4 +159,4 @@ function genSmithChart ($) {
     };
 }
 
-module.exports = genSmithChart;
+exports.chart = genSmithChart;
