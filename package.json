@@ -3,13 +3,16 @@
   "version": "0.1.4",
   "description": "Smith Chart React component",
   "main": "index.js",
-  "unpkg": "index.js",
+  "unpkg": "build/smith.js",
   "scripts": {
     "test": "eslint index.js",
     "build": "browserify src/app.js > build/app.js",
-    "start": "http-server -c5 build"
+    "start": "http-server -c5 build",
+    "browserify": "browserify --standalone smith index.js > build/smith.js",
+    "prepublish": "npm run test && mkdir -p build && npm run browserify"
   },
   "files": [
+    "build/smith.js",
     "index.js"
   ],
   "repository": {
