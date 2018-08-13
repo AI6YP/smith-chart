@@ -1,6 +1,6 @@
 {
   "name": "smith-chart",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Smith Chart React component",
   "main": "index.js",
   "unpkg": "index.js",
