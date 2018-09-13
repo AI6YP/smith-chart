@@ -8,6 +8,8 @@ Stateless React component to render [Smith Chart](http://www.arrl.org/files/file
 
 Example of React [app](src/app.js)
 
+[Observable Notebook](https://beta.observablehq.com/@drom/smith-chart)
+
 ### Build / Run example
 
 ```sh
